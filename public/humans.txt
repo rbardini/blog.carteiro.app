@@ -1,0 +1,11 @@
+/* OWNER */
+  Name:    Rafael Bardini
+  Contact: rafael [at] rbardini.com
+  Twitter: @rbardini
+  From:    Amsterdam, Netherlands
+
+/* SITE */
+  Language:   Português
+  Standards:  HTML5, CSS3
+  Components: Google Fonts, Turbolinks
+  Software:   Metalsmith, Atom, Sketch
