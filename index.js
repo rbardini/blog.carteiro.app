@@ -27,7 +27,7 @@ Metalsmith(__dirname)
   .metadata({
     development: argv.development,
     site: {
-      title: "Blog do Carteiro",
+      title: 'Blog do Carteiro',
       author: packageJson.author,
       url: packageJson.homepage,
       storeUrl: 'https://play.google.com/store/apps/details?id=com.rbardini.carteiro',
@@ -56,8 +56,8 @@ Metalsmith(__dirname)
     }
   }))
   .use(metadata({
-    'collections.pages': {type: 'page'},
-    'collections.posts': {type: 'post'}
+    'collections.pages': { type: 'page' },
+    'collections.posts': { type: 'post' }
   }))
   .use(moveUp([
     '**/*.md',
@@ -75,7 +75,7 @@ Metalsmith(__dirname)
     modifiedProperty: 'date',
     omitIndex: true
   }))
-  .use(rss({collection: 'posts'}))
+  .use(rss({ collection: 'posts' }))
   .use(moment(['date']))
   .use(layouts({
     pattern: '**/*.html',
@@ -85,7 +85,7 @@ Metalsmith(__dirname)
   .use(postcss({
     plugins: {
       'postcss-cssnext': {},
-      'cssnano': {autoprefixer: false}
+      'cssnano': {}
     },
     map: argv.development
   }))

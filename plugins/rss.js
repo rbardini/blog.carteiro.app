@@ -1,5 +1,5 @@
 const RSS = require('rss')
-const URL = require('url')
+const { URL } = require('url')
 
 module.exports = function plugin (opts) {
   return function (files, metalsmith, done) {
@@ -13,13 +13,13 @@ module.exports = function plugin (opts) {
       author: metadata.site.author,
       description: metadata.site.description,
       site_url: metadata.site.url,
-      feed_url: URL.resolve(metadata.site.url, destination)
+      feed_url: new URL(destination, metadata.site.url).href
     })
 
     collection.slice(0, limit).forEach(file => {
       var title = file.title
       var description = file.contents
-      var url = URL.resolve(metadata.site.url, file.path)
+      var url = new URL(file.path, metadata.site.url).href
 
       if (file.link != null) {
         title = `→ ${title}`
