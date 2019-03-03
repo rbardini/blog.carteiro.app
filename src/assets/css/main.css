@@ -60,7 +60,7 @@ header h1 {margin: 0}
 .link header h1 {font-size: 1.4em}
 .link header h1:after {color: var(--infoColor); content:"\00A0→"}
 .meta a {color: var(--infoColor)}
-.meta, .date, .footnotes, nav, aside, footer[role="contentinfo"] {color: var(--infoColor); font-size: 0.8em; margin: 0; text-align: center}
+.meta, .date, .footnotes, nav, aside, figure, footer[role="contentinfo"] {color: var(--infoColor); font-size: 0.8em; margin: 0; text-align: center}
 .meta, .date, .footnotes {text-align: inherit}
 
 .archive-cta {font-size: 1em}
