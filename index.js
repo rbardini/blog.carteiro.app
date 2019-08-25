@@ -1,6 +1,6 @@
 const argv = require('yargs').argv
 const Metalsmith = require('metalsmith')
-const assets = require('metalsmith-assets')
+const assets = require('metalsmith-assets-improved')
 const ignore = require('metalsmith-ignore')
 const renamer = require('metalsmith-renamer')
 const archive = require('metalsmith-archive')
@@ -9,7 +9,6 @@ const metadata = require('metalsmith-collection-metadata')
 const moveUp = require('metalsmith-move-up')
 const markdown = require('metalsmith-markdownit')
 const footnote = require('markdown-it-footnote')
-const highlight = require('markdown-it-highlightjs')
 const permalinks = require('metalsmith-permalinks')
 const sitemap = require('metalsmith-sitemap')
 const layouts = require('metalsmith-layouts')
@@ -35,10 +34,9 @@ Metalsmith(__dirname)
       trackingId: 'UA-3034872-4'
     }
   })
-  .use(assets())
   .use(assets({
-    source: 'node_modules/turbolinks/dist',
-    destination: 'js'
+    src: 'node_modules/turbolinks/dist',
+    dest: 'js'
   }))
   .use(ignore('**/.*'))
   .use(renamer({
@@ -67,7 +65,7 @@ Metalsmith(__dirname)
   .use(markdown({
     html: true,
     typographer: true
-  }).use(footnote).use(highlight))
+  }).use(footnote))
   .use(permalinks({
     relative: false
   }))
@@ -85,8 +83,9 @@ Metalsmith(__dirname)
   }))
   .use(postcss({
     plugins: {
-      'postcss-cssnext': {},
-      'cssnano': {}
+      'postcss-color-mod-function': {},
+      'postcss-preset-env': {},
+      cssnano: { autoprefixer: false }
     },
     map: argv.development
   }))
