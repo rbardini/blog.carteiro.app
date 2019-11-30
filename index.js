@@ -31,7 +31,7 @@ Metalsmith(__dirname)
       author: packageJson.author,
       url: packageJson.homepage,
       storeUrl: 'https://play.google.com/store/apps/details?id=com.rbardini.carteiro',
-      trackingId: 'UA-3034872-4'
+      trackingId: 'UA-3034872-5'
     }
   })
   .use(assets({
