@@ -1,0 +1,4 @@
+[build]
+  environment = { NODE_VERSION = "lts/*" }
+  command = "npm run build"
+  publish = "build"
