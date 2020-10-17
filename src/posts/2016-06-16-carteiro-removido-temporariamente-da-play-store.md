@@ -7,6 +7,6 @@ Devido à inesperada desativação do serviço WebSRO por parte dos Correios, o 
 
 Obrigado pela compreensão e apoio,
 
-_Rafael Bardini_
+Rafael Bardini
 
 **Atualização 17/06:** o WebSRO está de volta, e o Carteiro também :)

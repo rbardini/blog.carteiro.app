@@ -13,8 +13,7 @@ O que há de novo:
 - Correção de bugs durante adição e sincronização de objetos
 - Remoção do suporte a Android 5.1 ou inferior
 
-O redesenhado tema escuro traz um melhor contraste entre os elementos,
-facilitando a leitura enquanto consome menos energia:
+O redesenhado tema escuro traz um melhor contraste entre os elementos, facilitando a leitura enquanto consome menos energia:
 
 <figure class="image-comparison">
   <img src="/img/4-0-0-dark-theme-before.png" alt="" />
