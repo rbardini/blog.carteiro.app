@@ -51,7 +51,7 @@
     "metalsmith-watch": "1.0.3",
     "postcss-color-mod-function": "3.0.3",
     "postcss-preset-env": "6.7.0",
-    "pug": "3.0.0",
+    "pug": "3.0.1",
     "rss": "1.2.2",
     "turbolinks": "5.2.0",
     "yargs": "16.1.0"
