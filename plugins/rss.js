@@ -3,12 +3,12 @@ const { URL } = require('url')
 
 module.exports = function plugin (opts) {
   return function (files, metalsmith, done) {
-    var metadata = metalsmith.metadata()
-    var collection = metadata.collections[opts.collection]
-    var destination = opts.destination || 'rss.xml'
-    var limit = opts.limit || 20
+    const metadata = metalsmith.metadata()
+    const collection = metadata.collections[opts.collection]
+    const destination = opts.destination || 'rss.xml'
+    const limit = opts.limit || 20
 
-    var feed = new RSS({
+    const feed = new RSS({
       title: metadata.site.title,
       author: metadata.site.author,
       description: metadata.site.description,
@@ -17,9 +17,9 @@ module.exports = function plugin (opts) {
     })
 
     collection.slice(0, limit).forEach(file => {
-      var title = file.title
-      var description = file.contents
-      var url = new URL(file.path, metadata.site.url).href
+      let title = file.title
+      let description = file.contents
+      const url = new URL(file.path, metadata.site.url).href
 
       if (file.link != null) {
         title = `→ ${title}`

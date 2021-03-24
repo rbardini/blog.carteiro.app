@@ -8,9 +8,12 @@
     "lint": "npm-run-all lint:*",
     "lint:js": "eslint . --ignore-path .gitignore",
     "lint:md": "markdownlint . --ignore-path .gitignore",
+    "format": "prettier . --ignore-path .gitignore",
     "build": "node index.js",
     "start": "npm run build -- --development",
-    "deploy": "npm run build && git-directory-deploy --directory build --branch master"
+    "postinstall": "husky install",
+    "postpublish": "pinst --enable",
+    "prepublishOnly": "pinst --disable"
   },
   "keywords": [
     "carteiro",
@@ -29,8 +32,7 @@
   "license": "MIT",
   "dependencies": {
     "cssnano": "4.1.10",
-    "git-directory-deploy": "1.5.1",
-    "jstransformer-pug": "0.3.0",
+    "jstransformer-pug": "0.4.0",
     "markdown-it-footnote": "3.0.2",
     "metalsmith": "2.3.0",
     "metalsmith-archive": "0.1.1",
@@ -45,28 +47,30 @@
     "metalsmith-move-up": "2.0.1",
     "metalsmith-permalinks": "2.2.0",
     "metalsmith-postcss": "4.2.0",
-    "metalsmith-renamer": "0.5.37",
+    "metalsmith-renamer": "0.5.85",
     "metalsmith-serve": "0.0.7",
     "metalsmith-sitemap": "1.2.2",
     "metalsmith-watch": "1.0.3",
     "postcss-color-mod-function": "3.0.3",
     "postcss-preset-env": "6.7.0",
-    "pug": "3.0.0",
+    "pug": "3.0.2",
     "rss": "1.2.2",
     "turbolinks": "5.2.0",
-    "yargs": "16.1.0"
+    "yargs": "16.2.0"
   },
   "devDependencies": {
-    "eslint": "7.11.0",
-    "eslint-config-standard": "14.1.1",
+    "eslint": "7.22.0",
+    "eslint-config-standard": "16.0.2",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-promise": "4.2.1",
-    "eslint-plugin-standard": "4.0.1",
-    "husky": "4.3.0",
-    "lint-staged": "10.4.2",
-    "markdownlint-cli": "0.24.0",
+    "eslint-plugin-promise": "4.3.1",
+    "eslint-plugin-standard": "5.0.0",
+    "husky": "5.2.0",
+    "lint-staged": "10.5.4",
+    "markdownlint-cli": "0.27.1",
     "matter-now": "1.1.1",
-    "npm-run-all": "4.1.5"
+    "npm-run-all": "4.1.5",
+    "pinst": "2.1.6",
+    "prettier": "2.2.1"
   }
 }
